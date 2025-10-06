@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head.ejs') %>
+<body>
+    <header>
+        <h1> AI Generated Content </h1>
+    </header>
+    <hr>
+
+    <%- include('partials/nav.ejs') %>
+    <hr><br>
+
+    <main>
+        <form action="/ai" method="get">
+            <input type="text" name="topic" placeholder="Enter a topic to learn about it">
+            <button type="submit">Go</button>
+        </form>
+        
+        <% if (response) { %>
+            <section>
+                <h2>AI Summary</h2>
+                <div class="ai-response">
+                    <%- response %>
+                </div>
+            </section>
+        <% } %>
+
+    </main>
+    <hr>
+
+</body>
+<%- include('partials/footer.ejs') %>
+</html>
